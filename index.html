@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Monthsary ❤️</title>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive;
+      background: linear-gradient(to right, #ffdde1, #ee9ca7);
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .container {
+      margin-top: 80px;
+    }
+
+    h1 {
+      font-size: 3em;
+    }
+
+    p {
+      font-size: 1.5em;
+    }
+
+    .heart {
+      font-size: 50px;
+      animation: beat 1s infinite;
+    }
+
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 20px;
+      background-color: #fff;
+      color: #ff6f91;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #ffe4ec;
+    }
+
+    .hidden {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.3em;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Happy Monthsary 💕</h1>
+  <p>Every moment with you is special ✨</p>
+  <div class="heart">❤️</div>
+
+  <button onclick="celebrate()">Click me 💌</button>
+
+  <div id="message" class="hidden">
+    I love you more every single day 💖<br>
+    Thank you for being in my life 🌸
+  </div>
+</div>
+
+<script>
+  function celebrate() {
+    document.getElementById('message').classList.remove('hidden');
+
+    // Confetti burst
+    confetti({
+      particleCount: 150,
+      spread: 80,
+      origin: { y: 0.6 }
+    });
+
+    // Extra side bursts for cuteness
+    setTimeout(() => {
+      confetti({ particleCount: 80, angle: 60, spread: 55, origin: { x: 0 } });
+      confetti({ particleCount: 80, angle: 120, spread: 55, origin: { x: 1 } });
+    }, 300);
+  }
+</script>
+
+</body>
+</html>
